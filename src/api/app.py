@@ -5,10 +5,9 @@ from fastapi import FastAPI
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import PlainTextResponse
-from mangum import Mangum
 
-from api.routers import model, chat, embeddings
-from api.setting import API_ROUTE_PREFIX, TITLE, DESCRIPTION, SUMMARY, VERSION
+from api.routers import chat, embeddings, model
+from api.setting import API_ROUTE_PREFIX, DESCRIPTION, SUMMARY, TITLE, VERSION
 
 config = {
     "title": TITLE,
@@ -46,8 +45,6 @@ async def health():
 async def validation_exception_handler(request, exc):
     return PlainTextResponse(str(exc), status_code=400)
 
-
-handler = Mangum(app)
 
 if __name__ == "__main__":
     uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)
