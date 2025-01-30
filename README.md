@@ -48,7 +48,7 @@ If you find this GitHub repository useful, please consider giving it a free star
 
 Please check [Usage Guide](./docs/Usage.md) for more details about how to use the new APIs.
 
-> **Note:** The default model is set to `anthropic.claude-3-sonnet-20240229-v1:0` which can be changed via Lambda environment variables (`DEFAULT_MODEL`). You can call the [Models API](./docs/Usage.md#models-api) to get the full list of model IDs supported.
+> **Note:** The default model is set to `anthropic.claude-3-5-sonnet-20240620-v1:0` which can be changed via Lambda environment variables (`DEFAULT_MODEL`). You can call the [Models API](./docs/Usage.md#models-api) to get the full list of model IDs supported.
 
 ## Get Started
 
