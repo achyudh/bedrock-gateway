@@ -12,6 +12,7 @@ Use OpenAI-Compatible RESTful APIs for Amazon Bedrock models.
 """
 
 DEBUG = os.environ.get("DEBUG", "false").lower() != "false"
+AWS_PROFILE = os.environ.get("AWS_PROFILE", "ziya")
 AWS_REGION = os.environ.get("AWS_REGION", "us-west-2")
 DEFAULT_MODEL = os.environ.get(
     "DEFAULT_MODEL", "anthropic.claude-3-5-sonnet-20240620-v1:0"

@@ -5,12 +5,12 @@ import boto3
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 
-from api.setting import DEFAULT_API_KEYS
+from api.setting import AWS_PROFILE, DEFAULT_API_KEYS
 
 api_key_param = os.environ.get("API_KEY_PARAM_NAME")
 api_key_env = os.environ.get("API_KEY")
 if api_key_param:
-    ssm = boto3.client("ssm")
+    ssm = boto3.Session(profile=AWS_PROFILE).client("ssm")
     api_key = ssm.get_parameter(Name=api_key_param, WithDecryption=True)["Parameter"][
         "Value"
     ]
