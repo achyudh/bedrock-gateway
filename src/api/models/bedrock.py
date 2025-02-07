@@ -130,6 +130,12 @@ def list_bedrock_models() -> dict:
 
     if not model_list:
         # In case stack not updated.
+        model_list["anthropic.claude-3-5-haiku-20241022-v1:0"] = {
+            "modalities": ["TEXT", "IMAGE"]
+        }
+        model_list["anthropic.claude-3-5-sonnet-20241022-v2:0"] = {
+            "modalities": ["TEXT", "IMAGE"]
+        }
         model_list[DEFAULT_MODEL] = {"modalities": ["TEXT", "IMAGE"]}
 
     return model_list
